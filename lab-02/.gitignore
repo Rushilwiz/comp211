@@ -1,0 +1,14 @@
+# Build files
+*.o
+*.out
+signed
+twos
+negate2s
+f32
+.vscode
+
+# macOS
+.DS_Store
+
+# IDEif (i >= 0) 
+.idea

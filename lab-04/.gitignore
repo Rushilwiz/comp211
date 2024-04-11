@@ -1,0 +1,10 @@
+# Build files
+*.o
+main
+
+# macOS
+.DS_Store
+
+# IDE
+.idea
+.vscode

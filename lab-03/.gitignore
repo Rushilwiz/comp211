@@ -1,0 +1,11 @@
+# Build files
+*.o
+*.so
+*.out
+test
+
+# macOS
+.DS_Store
+
+# IDE
+.idea
