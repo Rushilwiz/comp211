@@ -1,0 +1,5 @@
+Number of tasks: pid priority cycles: pid priority cycles: pid priority cycles: pid priority cycles: pid priority cycles: pid priority cycles: pid priority cycles: ---- Tasks ----
+(num_tasks) [pid:priority:cycles:priority/cycles ...]
+(7) [ 1:5:10:0.50 2:16:17:0.94 3:8:24:0.33 4:1:36:0.03 5:99:100:0.99 6:1:62:0.02 0:26:80:0.32 ]
+Select scheduling algorithm (0: Display min heap, 1: FCFS, 2: Priority queue, 3: Round robin): ---- Min heap ----
+(7) [ 6:1:62:0.02 4:1:36:0.03 0:26:80:0.32 2:16:17:0.94 5:99:100:0.99 3:8:24:0.33 1:5:10:0.50 ]
