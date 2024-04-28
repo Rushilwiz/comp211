@@ -1,9 +1,11 @@
 // PID: 730677144
 // I pledge the COMP 211 honor code.
 
-#include "schedule.h"
 #include <stdio.h>
 #include <stdlib.h>
+
+#include "schedule.h"
+#include "task.h"
 
 void run_to_completion(task_struct* task) {
     printf("Task %d ran for %d cycles.\n", task->pid, task->remaining_cycles);
@@ -41,21 +43,29 @@ void priority_queue(unsigned int quantum) {
 
         task_struct* task = remove_task(get_task(0)->pid);
         run_with_quantum(task, quantum);
+
         if (task->remaining_cycles != 0) {
             append_task(task->pid, task->priority, task->remaining_cycles);
+        } else {
+            free(task);
         }
     }
 }
 
 void round_robin(unsigned int quantum) {
-    int i = 0;
-    while (size() > 0)
-    {
-        task_struct *task = get_task(i % size());
+    while (head != NULL) {
+        task_struct* task = head;
+        head = head->next;
         run_with_quantum(task, quantum);
-        if (task->remaining_cycles == 0) {
-            remove_task(task->pid);
+
+        if (task->remaining_cycles > 0) {
+            append_task(task->pid, task->priority, task->remaining_cycles);
+        } else {
+            free(task);
         }
-        i++;
+
+        if (head == NULL) {
+            tail = NULL;
+        }
     }
 }

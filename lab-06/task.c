@@ -201,7 +201,8 @@ void heapify(int i) {
         float next_ratio =
             (float)next->priority / (float)next->remaining_cycles;
 
-        if (curr_ratio > next_ratio) {
+        if (curr_ratio > next_ratio ||
+            (curr_ratio == next_ratio && curr->priority > next->priority)) {
             swap(curr->pid, next->pid);
             k = j;
         } else {

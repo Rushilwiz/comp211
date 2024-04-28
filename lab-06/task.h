@@ -193,4 +193,7 @@ void print_tasks();
  */
 int compare_floats(float a, float b);
 
+extern task_struct* head;
+extern task_struct* tail;
+
 #endif
